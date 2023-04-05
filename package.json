@@ -2,7 +2,7 @@
   "name": "@jota-one/nuxt-hypercontent",
   "version": "1.0.0",
   "description": "Hypercontent - CMS",
-  "repository": "your-org/my-module",
+  "repository": "https://github.com/jota-one/nuxt-hypercontent.git",
   "license": "MIT",
   "type": "module",
   "exports": {
