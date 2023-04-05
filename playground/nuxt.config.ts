@@ -1,4 +1,14 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  hypercontent: {}
+  hc: {
+    public: {
+      baseUrl: '/api',
+    },
+    db: {
+      host: '',
+      user: '',
+      password: '',
+      database: '',
+    }
+  }
 })

@@ -1,25 +1,38 @@
 import {defineNuxtModule, addPlugin, createResolver, installModule, addServerHandler, addImports} from '@nuxt/kit'
 import npmPackage from '../package.json'
+import defu from 'defu'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  hc: {
+  public: {
     baseUrl: string
+  },
+  db: {
+    host: string
+    user: string
+    password: string
+    database: string
   }
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: npmPackage.name,
-    configKey: 'hypercontent',
+    configKey: 'hc',
     compatibility: {
       nuxt: '^3.0.0'
     }
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    hc: {
+    public: {
       baseUrl: ''
+    },
+    db: {
+      host: 'localhost',
+      user: 'root',
+      password: 'password',
+      database: 'database',
     }
   },
   async setup (options, nuxt) {
@@ -30,11 +43,16 @@ export default defineNuxtModule<ModuleOptions>({
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolve('./runtime/plugin'))
 
-    // const baseUrl = options.hc.baseUrl
-    // addServerHandler({
-    //   route: `${baseUrl}/settings`,
-    //   handler: resolve('./runtime/server/api/settings')
-    // })
+    nuxt.options.runtimeConfig.public.hc = defu(nuxt.options.runtimeConfig.public.hc, options.public)
+    nuxt.options.runtimeConfig.hc = { db: options.db }
+
+    console.log(options)
+    console.log(nuxt.options.runtimeConfig.public)
+
+    addServerHandler({
+      route: `${options.public.baseUrl}/settings`,
+      handler: resolve('./runtime/server/api/settings')
+    })
 
     addImports({
       name: 'useSettings',

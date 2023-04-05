@@ -6,7 +6,7 @@ let db: Knex
 
 export const getDb = (): Knex => {
   if (!db) {
-    const dbConfig = useRuntimeConfig().db
+    const dbConfig = useRuntimeConfig().hc.db
     db = knex({
       client: 'mysql',
       connection: {
