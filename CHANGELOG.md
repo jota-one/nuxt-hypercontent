@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.0.4
+
+[compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.3...v1.0.4)
+
+
+### 🩹 Fixes
+
+  - Config settings ([5a5be95](https://github.com/jota-one/nuxt-hypercontent/commit/5a5be95))
+
+### 🏡 Chore
+
+  - Added explicitely defu dependency ([2fb3f3a](https://github.com/jota-one/nuxt-hypercontent/commit/2fb3f3a))
+
+### ❤️  Contributors
+
+- Joel Poulin <joel@jota.one>
+
 ## v1.0.3
 
 [compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.2...v1.0.3)
