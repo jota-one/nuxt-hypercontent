@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.0.3
+
+[compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.2...v1.0.3)
+
+
+### 🩹 Fixes
+
+  - Attempt to make it work ([9b493c2](https://github.com/jota-one/nuxt-hypercontent/commit/9b493c2))
+
+### ❤️  Contributors
+
+- Joel Poulin <joel@jota.one>
+
 ## v1.0.2
 
 [compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.1...v1.0.2)
