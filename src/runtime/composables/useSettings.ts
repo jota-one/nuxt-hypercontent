@@ -13,7 +13,7 @@ export interface Settings {
 }
 
 export const useSettings = () => {
-  const { api } = useRuntimeConfig().public
+  const { hc } = useRuntimeConfig().public
   const route = useRoute()
 
   const langs = useState('langs', () => ref<Lang[]>([]))
@@ -25,7 +25,7 @@ export const useSettings = () => {
     }
 
     const { data: settings } = await useFetch<Settings>(
-      `${api.prefix}/settings`,
+      `${hc.baseUrl}/settings`,
     )
 
     if (settings.value?.langs) {

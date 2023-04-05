@@ -30,11 +30,11 @@ export default defineNuxtModule<ModuleOptions>({
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolve('./runtime/plugin'))
 
-    const baseUrl = options.hc.baseUrl
-    addServerHandler({
-      route: `${baseUrl}/settings`,
-      handler: resolve('./runtime/server/api/settings')
-    })
+    // const baseUrl = options.hc.baseUrl
+    // addServerHandler({
+    //   route: `${baseUrl}/settings`,
+    //   handler: resolve('./runtime/server/api/settings')
+    // })
 
     addImports({
       name: 'useSettings',
