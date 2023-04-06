@@ -1,4 +1,4 @@
-import {defineNuxtModule, addPlugin, createResolver, installModule, addServerHandler, addImports} from '@nuxt/kit'
+import {defineNuxtModule, addPlugin, createResolver, installModule, addServerHandler, addImports, addTemplate} from '@nuxt/kit'
 import npmPackage from '../package.json'
 import defu from 'defu'
 
@@ -12,8 +12,11 @@ export interface ModuleOptions {
     user: string
     password: string
     database: string
-  }
+  },
+  elementPlus: {}
 }
+
+export * from './runtime/server/constants'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -33,12 +36,20 @@ export default defineNuxtModule<ModuleOptions>({
       user: 'root',
       password: 'password',
       database: 'database',
-    }
+    },
+    elementPlus: {
+      importStyle: 'css',
+      themes: ['dark'],
+    },
   },
   async setup (options, nuxt) {
     await installModule('@nuxtjs/tailwindcss')
     await installModule('@element-plus/nuxt')
     const { resolve } = createResolver(import.meta.url)
+
+    // pre-configure element-plus
+    nuxt.options.elementPlus ||= {}
+    nuxt.options.elementPlus = defu(nuxt.options.elementPlus, options.elementPlus)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolve('./runtime/plugin'))

@@ -1,5 +1,5 @@
 import { defineEventHandler } from 'h3'
-import { TABLE } from '../constants'
+import { HC_TABLE } from '../constants'
 import { getDb } from '../helpers/db'
 import { secureQuery } from '../helpers/sql'
 
@@ -15,7 +15,7 @@ export default defineEventHandler(async () => {
 
   const getLangs = () =>
     secureQuery(() =>
-      db(TABLE.LANGS)
+      db(HC_TABLE.LANGS)
         .select('id', 'code', 'label', 'is_default', 'sort')
         .orderBy('sort', 'asc'),
     )

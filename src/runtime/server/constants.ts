@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-export enum TABLE {
+export enum HC_TABLE {
   CITIES = 'sisi__cities',
   CITY_WATCHERS = 'sisi__city_watchers',
   CONTENTS = 'hypercontent__contents',
@@ -20,9 +20,8 @@ export enum TABLE {
   USERS = 'sisi__users',
 }
 
-export enum VIEW {
+export enum HC_VIEW {
   NAVIGATION = 'hypercontent__navigation_view',
 }
 
-export const SLUG_RESOLVE_FIELD = 'slug_resolve'
-export const EVENT_BREAK_TYPE_XID = 'break'
+export const HC_SLUG_RESOLVE_FIELD = 'slug_resolve'
