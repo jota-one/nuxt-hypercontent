@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.0.5
+
+[compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.4...v1.0.5)
+
+
+### 🏡 Chore
+
+  - Preconfigure elementPlus + attempt to expose some types to the parent app ([76e6ed8](https://github.com/jota-one/nuxt-hypercontent/commit/76e6ed8))
+
+### ❤️  Contributors
+
+- Joel Poulin <joel@jota.one>
+
 ## v1.0.4
 
 [compare changes](https://github.com/jota-one/nuxt-hypercontent/compare/v1.0.3...v1.0.4)
