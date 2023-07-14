@@ -32,3 +32,17 @@ export const secureQuery = async (
   }
   return r
 }
+
+export const getNow = () => {
+  let now = 'NOW()'
+
+  const timeZoneOffset = new Date().getTimezoneOffset()
+
+  if (timeZoneOffset) {
+    now += ` ${timeZoneOffset < 0 ? '+' : '-'} INTERVAL ${Math.abs(
+      timeZoneOffset,
+    )} MINUTE`
+  }
+
+  return now
+}
