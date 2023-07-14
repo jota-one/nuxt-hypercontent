@@ -1,3 +1,5 @@
+import { defineEventHandler } from 'h3'
+
 import { isAuthor } from '../../../utils/access-control'
 import { HC_SLUG_RESOLVE_FIELD, HC_TABLE } from '../../constants'
 import { getDb } from '../../helpers/db'

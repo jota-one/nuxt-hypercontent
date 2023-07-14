@@ -1,4 +1,5 @@
 import { defineEventHandler } from 'h3'
+
 import { HC_TABLE } from '../constants'
 import { getDb } from '../helpers/db'
 import { secureQuery } from '../helpers/sql'

@@ -1,4 +1,5 @@
 import EditorJS from '@editorjs/editorjs'
+import { defineEventHandler } from 'h3'
 
 import { isAuthor } from '../../../utils/access-control'
 import { HC_TABLE } from '../../constants'
